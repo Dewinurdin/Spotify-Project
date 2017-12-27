@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url("image/musical-background.jpg");
+	font-size: 18px;
+	background-position: center;
+}
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.input-group {
+	width: 500px;
+	position: absolute;
+	top: 30%;
+	right: 300px;
+}
+
+.btn-default {
+	height: 50px;
+	background-color: #eee;
+}
+.form-control {
+	height: 50px;
+}
+.glyphicon-search {
+	font-size: 20px;
+}
+
+
+/*this is just dummy to see if I position boxes correctly on html to display search results*/
+.box {
+	font-weight: bold;
+	width: 20%;
+	margin: 20px;
+	padding: 40px;
+	font-size: 20px;
+	display: inline-block;
+	margin-left: 50px;
+}
+.results {
+	position: absolute;
+	top: 45%;
+}
+.box1 {
+	background-color: green;
+}
+.box2 {
+	background-color: blue;
+}
+.box3 {
+	background-color: yellow;
+}
