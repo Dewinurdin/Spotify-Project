@@ -1,57 +1,43 @@
+
+
 * {
-	margin: 0;
+	margin: auto 0;
 	padding: 0;
+	box-sizing: border-box;
+
 }
 
 body {
-	background-image: url("image/musical-background.jpg");
-	font-size: 18px;
-	background-position: center;
+	font-family: 'Raleway', sans-serif;
+	background-image: url('bg1.jpg');
+	font-size: 20px;
+	background-size: cover;
 }
+
 .container {
-	display: flex;
 	justify-content: center;
 }
 
-.input-group {
-	width: 500px;
-	position: absolute;
-	top: 30%;
-	right: 300px;
+.artist {
+	color: white;
 }
 
-.btn-default {
-	height: 50px;
-	background-color: #eee;
+.form-group {
+	margin: 50px;
 }
+
 .form-control {
+	width: 700px;
+}
+
+.btn-primary {
 	height: 50px;
+	font-size: 16px;
+	width: 200px;
+	margin-top: 5px;
+
 }
-.glyphicon-search {
-	font-size: 20px;
+.panel-heading {
+	text-align: center;
 }
 
-
-/*this is just dummy to see if I position boxes correctly on html to display search results*/
-.box {
-	font-weight: bold;
-	width: 20%;
-	margin: 20px;
-	padding: 40px;
-	font-size: 20px;
-	display: inline-block;
-	margin-left: 50px;
-}
-.results {
-	position: absolute;
-	top: 45%;
-}
-.box1 {
-	background-color: green;
-}
-.box2 {
-	background-color: blue;
-}
-.box3 {
-	background-color: yellow;
-}

@@ -8,8 +8,6 @@
  */
 module.exports = function (app, path, bodyParser) {
 
-
-
   var Spotify = require('node-spotify-api');
   var spotifyKeys = {
     id: "33274dd92de5439da8bb2f0506caf104",
@@ -21,7 +19,7 @@ module.exports = function (app, path, bodyParser) {
 
   app.get("/", function (req, res) {
    console.log(res);
-    res.sendFile(path.join(__dirname, "public/index.html"));
+    res.sendFile(path.join(__dirname, "/public/index.html"));
     // spotifyClient.search({type: 'track', query: "u2"}, function (error, data) {
     //   if (error) console.log("Spotify error: " + error);
     //   console.log(data);
@@ -31,15 +29,18 @@ module.exports = function (app, path, bodyParser) {
 
   });
 
-  app.get("/spotify", function (req, res) {
-    spotifyClient.search({type: 'track', query: "u2"}, function (error, data) {
+  app.post("/spotify", function (req, res) {
+    var artistSearch = req.body;
+    console.log(artistSearch.queryTerm);
+    spotifyClient.search({query: artistSearch.queryTerm, type: 'artist'}, function (error, data) {
       if (error) console.log("Spotify error: " + error);
-      console.log(data);
+      // console.log(data); //searches for tracks instead of artists..?
 
       res.json(data);
     });
   });
 
+ 
   app.post("/test", function (req, res) {
     var clientData = req.body;
     console.log(clientData);
@@ -61,7 +62,7 @@ module.exports = function (app, path, bodyParser) {
     //     state: state
     //   }));
     // res.send('linked');
-    res.sendFile(path.join(__dirname, "public/default.html")); 
+    res.sendFile(path.join(__dirname, "/public/default.html")); 
     //path to "home page" for the app
     //create a new html page for this, after logging in you should be directed to that page
   });
@@ -186,7 +187,5 @@ module.exports = function (app, path, bodyParser) {
     });
   });
 
-  console.log('Listening on 8888');
-  // app.listen(8888);
-
+  
 } // end module.exports
