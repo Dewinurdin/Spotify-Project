@@ -1,15 +1,3 @@
-HTML:
-	-create site layout (new html file)
-	-search bar @ top w/ submit button
-	-3 columns to display search results
-	-area below all of this to display song + lyrics
-CSS:
-	-whatever
-JS:
-	-on click function for submit button at the top
-		-get the value of the search bar and send it through an ajax query
-		-display search results in first column
-	-on click functions for buttons that will appear in each column
-		-after clicking an artist, display albums in the next column
-		-after clicking an album, display tracks in the last column
-		-after clicking a track, display it at the bottom along with lyrics
+-narrow down the searches so you always get the right song
+-add scrollbars to the divs with dynamically appended data to them so that they stay the same size regardless of how many results are returned
+-general styling
