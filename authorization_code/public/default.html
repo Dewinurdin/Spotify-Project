@@ -1,56 +1,45 @@
 <!doctype html>
 <html>
   <head>
-    <title>test</title>
-<<<<<<< HEAD
+    <title>Spotify Music Search</title>
+
    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
-
-=======
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
->>>>>>> upstream/master
-
   </head>
 
   <body>
     <div class="container">
 
-<<<<<<< HEAD
         <div class="form-group">
           <label for="artist" class="artist"><h1><strong>Search an Artist :</strong></h1></label>
            <input type="text" class="form-control" id="artist-input">
              <button type="button" class="btn btn-primary" id="submit">Submit</button>
-
         </div>
 
-
         <div class="row">
-         <div class="col-md-4">
+         <div class="col-sm-4">
            <div class="panel-artist panel-primary">
               <div class="panel-heading">Artists</div>
                 <div class="panel-body">
                  <div class="list-group" id="artist-display">
-
                   </div>
                 </div>
              </div>
            </div>
 
-        <div class="col-md-4">
+        <div class="col-sm-4">
           <div class="panel-album panel-primary">
             <div class="panel-heading">Albums</div>
              <div class="panel-body">
                 <div class="list-group" id="album-display">
-
                 </div>
              </div>
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-sm-4">
           <div class="panel-track panel-primary">
             <div class="panel-heading">Tracks</div>
              <div class="panel-body">
@@ -61,87 +50,32 @@
             </div>
           </div>
         </div>
+     </div>
 
-          <div class="col-md-3" id="spotify-player">
-      <!-- dynamically created spotify widget will appear here -->
+  <div class="container column">
+    <div class="row">
+      <div class="col-sm-6" id="spotify-player">
+  <!-- dynamically created spotify widget will appear here -->
       </div>
-    
-    <div class="col-md-9" id="lyrics-display">
-      <!-- lyrics pulled from lyrics api show up here -->
-    </div> 
-      
-=======
-		<div class="form-group">
-    		<label for="artist">Search an Artist:</label>
-    		<input type="text" class="form-control" id="artist-input">
-  		</div>
 
-		<button type="button" class="btn btn-primary" id="submit">Submit</button>
-
-		<div class="row">
-			<div class="col-md-4">
-				<div class="panel panel-primary">
-      				<div class="panel-heading">Artists</div>
-      				<div class="panel-body">
-      					<div class="list-group" id="artist-display">
-
-						</div>
-      				</div>
-    			</div>
-			</div>
-
-			<div class="col-md-4">
-				<div class="panel panel-primary">
-      				<div class="panel-heading" id="test">Albums</div>
-      				<div class="panel-body">
-      					<div class="list-group" id="album-display">
-
-						</div>
-      				</div>
-    			</div>
-			</div>
-
-			<div class="col-md-4">
-				<div class="panel panel-primary">
-      				<div class="panel-heading">Tracks</div>
-      				<div class="panel-body">
-      					<div class="list-group" id="track-display">
-
-						</div>
-      				</div>
-    			</div>
-			</div>
-		</div>
-
-		<div class="row">
-		
-			<div class="col-md-3" id="spotify-player">
-				<!-- dynamically created spotify widget will appear here -->
-	    	</div>
-			
-			<div class="col-md-8">
-				<div class="panel panel-primary">
-	      				<div class="panel-heading">Tracks</div>
-	      				<div class="panel-body" id="lyrics-display">
-	      					<div class="list-group" id="track-display">
-
-							</div>
-	      				</div>
-	    		</div>
-			</div> 
-		</div>
->>>>>>> upstream/master
+     <div class="col-sm-6" id="lyrics-display">
+     
+  <!-- lyrics pulled from lyrics api show up here -->
+      </div> 
     </div>
+  </div>
+
   </body>
 
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
   <script type="text/javascript">
-<<<<<<< HEAD
+
 
     $(".panel-artist").hide();
     $(".panel-album").hide();
     $(".panel-track").hide();
+
     
     $("#submit").on('click', function() {
       $("#artist-display").empty();
@@ -150,32 +84,18 @@
       var artistSearch = {};
       artistSearch.queryTerm = $("#artist-input").val().trim();
       // console.log("you searched for: " + queryTerm);
-      // console.log(typeof queryTerm);
-      $.ajax({
-=======
-  	
-
-
-    $("#submit").on('click', function() {
-    	$("#artist-display").empty();
-    	$("#album-display").empty();
-    	$("#track-display").empty();
-    	var artistSearch = {};
-    	artistSearch.queryTerm = $("#artist-input").val().trim();
-    	// console.log("you searched for: " + queryTerm);
-    	// console.log(typeof queryTerm);
+      // console.log(typeof queryTerm);     
 
     	$.ajax({
->>>>>>> upstream/master
           method: "POST",
           url: "/spotify",
           data: artistSearch,
           dataType: "JSON"
         }).done(function (data) {
           var test = JSON.stringify(data);
-<<<<<<< HEAD
           console.log(data);
           console.log("artist search results:");
+
           for(var i = 0; i < data.artists.items.length; i++){
             console.log((i+1) + ") " + data.artists.items[i].name);
             //dynamically create html elements that will serve as buttons to select an artist from the search results
@@ -187,46 +107,24 @@
             //append the artist search result to the #artist-display
             $("#artist-display").append($artistSearchResult);
              $(".panel-artist").show();
-=======
+             $("#artist-input").val('');
+           
+          }
           console.log(test);
           console.log("artist search results:");
-          for(var i = 0; i < data.artists.items.length; i++){
-          	console.log((i+1) + ") " + data.artists.items[i].name);
-          	//dynamically create html elements that will serve as buttons to select an artist from the search results
-          	var $artistSearchResult = $("<a>");
-          	$artistSearchResult.addClass("list-group-item");
-          	$artistSearchResult.addClass("artistResult");
-          	// $artistSearchResult.attr('id', data.artists.items[i].name);
-          	$artistSearchResult.text(data.artists.items[i].name);
-          	//append the artist search result to the #artist-display
-          	$("#artist-display").append($artistSearchResult);
->>>>>>> upstream/master
-          }
-          
         });
     });
 
-    //on click for dynamically created artist search results
+//on click for dynamically created artist search results
     $(document).on("click", ".artistResult", function() {
-<<<<<<< HEAD
       $("#album-display").empty();
       $("#track-display").empty();
       console.log("artist result clicked");
       console.log($(this).text());
       var albumSearch = {};
-      albumSearch.queryTerm = $(this).text(); 
-      $.ajax({
-=======
-    	$("#album-display").empty();
-    	$("#track-display").empty();
-    	console.log("artist result clicked");
-    	console.log($(this).text());
-
-    	var albumSearch = {};
-    	albumSearch.queryTerm = $(this).text();	
+      albumSearch.queryTerm = $(this).text();     
 
     	$.ajax({
->>>>>>> upstream/master
           method: "POST",
           url: "/artist",
           data: albumSearch,
@@ -235,8 +133,8 @@
           var test = JSON.stringify(data);
           console.log(test);
           console.log("album search results:");
+
           for(var i = 0; i < data.albums.items.length; i++){
-<<<<<<< HEAD
             console.log((i+1) + ") " + data.albums.items[i].name);
             //dynamically create html elements that will serve as buttons to select an artist from the search results
             var $albumSearchResult = $("<a>");
@@ -247,34 +145,10 @@
             //append the artist search result to the #artist-display
             $("#album-display").append($albumSearchResult);
              $(".panel-album").show();
-          }
-          
+          }          
         });
   });
-    //on click for dynamically created album search results
-    $(document).on("click", ".albumResult", function() {
-      $("#track-display").empty();
-      console.log("album result clicked");
-      console.log($(this).text());
-      var trackSearch = {};
-      trackSearch.queryTerm = $(this).text(); 
-      $.ajax({
-=======
-          	console.log((i+1) + ") " + data.albums.items[i].name);
-          	//dynamically create html elements that will serve as buttons to select an artist from the search results
-          	var $albumSearchResult = $("<a>");
-          	$albumSearchResult.addClass("list-group-item");
-          	$albumSearchResult.addClass("albumResult");
-          	// $artistSearchResult.attr('id', data.artists.items[i].name);
-          	$albumSearchResult.text(data.albums.items[i].name);
-          	//append the artist search result to the #artist-display
-          	$("#album-display").append($albumSearchResult);
-          }
-          
-        });
-
-    });
-
+    
     //on click for dynamically created album search results
     $(document).on("click", ".albumResult", function() {
     	$("#track-display").empty();
@@ -285,19 +159,18 @@
     	trackSearch.queryTerm = $(this).text();	
 
     	$.ajax({
->>>>>>> upstream/master
           method: "POST",
           url: "/album",
           data: trackSearch,
           dataType: "JSON"
         }).done(function (data) {
           var test = JSON.stringify(data);
-          console.log(test);
+          console.log("Tracks: " + test);
           console.log("track search results:");
+
           for(var i = 0; i < data.tracks.items.length; i++){
-<<<<<<< HEAD
             console.log((i+1) + ") " + data.tracks.items[i].name);
-            //dynamically create html elements that will serve as buttons to select an artist from the search results
+//dynamically create html elements that will serve as buttons to select an artist from the search results
             var $trackSearchResult = $("<a>");
             $trackSearchResult.addClass("list-group-item");
             $trackSearchResult.addClass("trackResult");
@@ -305,39 +178,13 @@
             $trackSearchResult.text(data.tracks.items[i].name);
             //append the artist search result to the #artist-display
             $("#track-display").append($trackSearchResult);
-=======
-          	console.log((i+1) + ") " + data.tracks.items[i].name);
-          	//dynamically create html elements that will serve as buttons to select an artist from the search results
-          	var $trackSearchResult = $("<a>");
-          	$trackSearchResult.addClass("list-group-item");
-          	$trackSearchResult.addClass("trackResult");
-          	// $artistSearchResult.attr('id', data.artists.items[i].name);
-          	$trackSearchResult.text(data.tracks.items[i].name);
-          	//append the artist search result to the #artist-display
-          	$("#track-display").append($trackSearchResult);
->>>>>>> upstream/master
-          }
-          
+            $(".panel-track").show();          
+          }          
         });
     });
-<<<<<<< HEAD
-    //on click for dynamically created track search results
-    //clicking here will trigger the song and lyrics to be displayed
-    $(document).on("click", ".trackResult", function() {
-      $("#spotify-player").empty();
-      console.log("track result clicked");
-      console.log($(this).text());
-      var trackSearch = {};
-      trackSearch.queryTerm = $(this).text(); 
-      console.log("you searched: " + trackSearch.queryTerm);
-      //grab the id of the track you selected
-      //take in the track name and perform a search
-      //grab first result's id data.tracks.items[0].id
-      $.ajax({
-=======
 
-    //on click for dynamically created track search results
-    //clicking here will trigger the song and lyrics to be displayed
+//on click for dynamically created track search results
+//clicking here will trigger the song and lyrics to be displayed
     $(document).on("click", ".trackResult", function() {
     	$("#lyrics-display").empty();
     	$("#spotify-player").empty();
@@ -348,25 +195,18 @@
     	trackSearch.queryTerm = $(this).text();	
     	console.log("you searched: " + trackSearch.queryTerm);
 
-    	//grab the id of the track you selected
-    	//take in the track name and perform a search
-    	//grab first result's id data.tracks.items[0].id
+//grab the id of the track you selected
+//take in the track name and perform a search
+//grab first result's id data.tracks.items[0].id
+//WIDGET
     	$.ajax({
->>>>>>> upstream/master
           method: "POST",
           url: "/album",
           data: trackSearch,
           dataType: "JSON"
         }).done(function (data) {
           var trackid = data.tracks.items[0].id
-<<<<<<< HEAD
-          console.log(trackid);
-          
-          var $spotifyPlayer = $("<iframe src='https://open.spotify.com/embed?uri=spotify:track:" + trackid + "'frameborder='0' allowtransparency='true'></iframe>)");
-          $("#spotify-player").append($spotifyPlayer);
-=======
-          console.log(data);
-          console.log(trackid);
+          console.log(trackid);        
           
           var $spotifyPlayer = $("<iframe src='https://open.spotify.com/embed?uri=spotify:track:" + trackid + "'frameborder='0' allowtransparency='true'></iframe>)");
 
@@ -374,6 +214,7 @@
 
         var trackArtist = data.tracks.items[0].artists[0].name;
         var trackName = data.tracks.items[0].name;
+//LYRIC
     	$.ajax({
             url: "https://api.lyrics.ovh/v1/" + trackArtist + "/" + trackName + "",
             method: 'GET'
@@ -389,7 +230,7 @@
               $("#lyrics-display").append(display);
 
           });
->>>>>>> upstream/master
+
           
         });
     });

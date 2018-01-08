@@ -18,13 +18,13 @@ module.exports = function (app, path, bodyParser) {
 
 
   app.get("/", function (req, res) {
-<<<<<<< HEAD
+
    console.log(res);
     res.sendFile(path.join(__dirname, "/public/index.html"));
-=======
+
    // console.log(res);
     res.sendFile(path.join(__dirname, "public/index.html"));
->>>>>>> upstream/master
+
     // spotifyClient.search({type: 'track', query: "u2"}, function (error, data) {
     //   if (error) console.log("Spotify error: " + error);
     //   console.log(data);
@@ -38,8 +38,7 @@ module.exports = function (app, path, bodyParser) {
     var artistSearch = req.body;
     console.log(artistSearch.queryTerm);
     spotifyClient.search({query: artistSearch.queryTerm, type: 'artist'}, function (error, data) {
-<<<<<<< HEAD
-=======
+
       if (error) console.log("Spotify error: " + error);
       // console.log(data); //searches for tracks instead of artists..?
 
@@ -51,7 +50,7 @@ module.exports = function (app, path, bodyParser) {
     var albumSearch = req.body;
     console.log(albumSearch.queryTerm);
     spotifyClient.search({query: albumSearch.queryTerm, type: 'album'}, function (error, data) {
->>>>>>> upstream/master
+
       if (error) console.log("Spotify error: " + error);
       // console.log(data); //searches for tracks instead of artists..?
 
@@ -59,9 +58,7 @@ module.exports = function (app, path, bodyParser) {
     });
   });
 
-<<<<<<< HEAD
- 
-=======
+
   app.post("/album", function (req, res) {
     var trackSearch = req.body;
     console.log(trackSearch.queryTerm);
@@ -74,7 +71,7 @@ module.exports = function (app, path, bodyParser) {
   });
 
 
->>>>>>> upstream/master
+
   app.post("/test", function (req, res) {
     var clientData = req.body;
     console.log(clientData);
