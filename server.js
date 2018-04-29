@@ -16,6 +16,4 @@ app.listen(PORT, () => {
   console.log("App listening on Port " + PORT);
 });
 
-
-
 require("./authorization_code/app.js")(app, path, bodyParser);

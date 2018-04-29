@@ -6,6 +6,10 @@
   "scripts": {
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dewinurdin/Spotify-Project.git"
+  },
   "version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.18.2",
