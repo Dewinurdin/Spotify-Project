@@ -4,7 +4,7 @@
   "main": "server.js",
   "description": "Basic examples of the Spotify authorization flows through OAuth 2",
   "scripts": {
-    "start": "node server.js"
+    "start": "npm server.js"
   },
   "repository": {
     "type": "git",
