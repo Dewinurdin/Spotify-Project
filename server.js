@@ -10,9 +10,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("authorization_code/public"));
 
-
-
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log("App listening on Port " + PORT);
