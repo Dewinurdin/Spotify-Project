@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-app.use(express.static("authorization_code/public"));
+app.use(express.static("authorization_code/public/default.html"));
 
 const PORT = process.env.PORT || 5000;
 
