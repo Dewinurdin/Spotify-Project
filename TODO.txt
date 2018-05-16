@@ -1,3 +1,0 @@
--narrow down the searches so you always get the right song
--add scrollbars to the divs with dynamically appended data to them so that they stay the same size regardless of how many results are returned
--general styling
